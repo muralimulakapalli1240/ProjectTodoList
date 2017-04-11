@@ -1,0 +1,72 @@
+
+
+
+<div ng-controller="TodoListController as todoList">
+  <div class="col-md-12 nopadding">
+      <div class="col-md-4 nopadding">
+      <form ng-submit="todoList.addItem(todoList.newItemText)">
+        <input placeholder="Add Task" ng-model="todoList.newItemText" class="form-control" />
+      </form>
+      </div>
+    
+      <div class="col-md-4 pull-right nopadding">
+      <input placeholder="Search" class="form-control" ng-model="todoList.search"/>
+      </div>
+      </div>
+      <ul class=" list-unstyled">      
+        <table class="table">
+  <tr>
+    <th>Serial No
+    </th>
+    <th>Project name
+    </th>
+    <th>Status
+    </th>
+    <th>Action
+    </th>
+    <th>Remove</th>
+  </tr>
+  <tr ng-repeat="item in todoList.itemList  | filter: todoList.search ">
+    <td>
+    {{item.id}}
+    </td>
+    <td>
+      <div><a ui-sref="details({id: item.id})" >{{ item.text }}</a></div>
+    </td>
+    <td>
+     <span ng-if="!item.done">Processing</span>
+                  <span ng-if="item.done">Complete</span>
+    </td>
+    <td><button ng-click="todoList.completeItem(item.id)" class="btn btn-default">
+            
+                  <span ng-if="!item.done">Complete</span>
+                  <span ng-if="item.done">Add to task</span></button></td>
+    <td>
+      <button ng-click="todoList.removeItem(item.id)" class="btn btn-default ">Remove</button>
+    </td>
+  </tr>
+</table>
+  
+      </ul>
+
+      <div ng-if="todoList.itemList.length > 0">
+        <div class="radio">
+          <label>
+            <input type="radio" name="filter-type" data-ng-model="todoList.filterType" ng-value="todoList.takeAll"> All
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="filter-type" data-ng-model="todoList.filterType" ng-value="todoList.onlyDone"> 
+            Only done
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="filter-type" data-ng-model="todoList.filterType" ng-value="todoList.onlyNotDone"> Not done
+          </label>
+        </div>
+      </div>
+
+
+</div>

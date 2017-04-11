@@ -1,0 +1,13 @@
+li.ui-state-default {
+    background: #fff;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    float: left;
+    width: 100%;
+}
+.container {
+    max-width: 718px;
+}
+.done-item {
+    text-decoration: line-through;
+}

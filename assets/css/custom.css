@@ -1,0 +1,25 @@
+li.ui-state-default {
+    background: #fff;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    float: left;
+    width: 100%;
+}
+.container {
+    max-width: 600px;
+}
+.done-item {
+    text-decoration: line-through;
+}
+.pad {
+    padding: 20px 10px 10px 10px;
+    text-align: center;
+}
+.col-md-4.nopadding {
+    padding: 0;
+}
+.col-md-12.nopadding {
+
+    padding: 0;
+    padding-bottom: 14px;
+}

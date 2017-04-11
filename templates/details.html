@@ -1,0 +1,9 @@
+<div>
+<a ui-sref="home" class="btn btn-primary">Back</a>
+<br>Current task :{{item.text}}<br>
+<div ng-if="item.done">
+Task Completed
+</div>
+<div ng-if="!item.done">
+Task is in Processing
+</div>
